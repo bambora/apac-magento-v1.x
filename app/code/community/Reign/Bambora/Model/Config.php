@@ -1,7 +1,7 @@
 <?php
 /**
  * @author    Reign <hello@reign.com.au>
- * @version   1.0
+ * @version   1.2.0
  * @copyright Copyright (c) 2017 Reign. All rights reserved.
  * @copyright Copyright (c) 2017 Bambora. All rights reserved.
  * @license   Proprietary/Closed Source
@@ -25,6 +25,7 @@ class Reign_Bambora_Model_Config
                 $types[$data['code']] = $data['name'];
             }
         }
+
         return $types;
     }
     
@@ -35,6 +36,7 @@ class Reign_Bambora_Model_Config
             $monthNum = ($key < 10) ? '0'.$key : $key;
             $data[$key] = $monthNum . ' - ' . $value;
         }
+
         return $data;
     }
 
@@ -47,16 +49,17 @@ class Reign_Bambora_Model_Config
             $year = $first + $index;
             $years[$year] = $year;
         }
+
         return $years;
     }
     
     public function isEnableSSLVerification()
     {
-        if(Mage::getStoreConfig('payment/bambora/payment_bambora_mode') == "live") {
+        if (Mage::getStoreConfig('payment/bambora/payment_bambora_mode') == "live") {
             return 1;
         }
         
-        if(Mage::getStoreConfig('payment/bambora/ssl_verification')){
+        if (Mage::getStoreConfig('payment/bambora/ssl_verification')) {
             return 1;
         } else {
             return 0;

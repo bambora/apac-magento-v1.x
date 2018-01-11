@@ -10,18 +10,4 @@
  * Reign and Bambora. The license can be found, in its entirety, at this address:
  * http://www.reign.com.au/magento-licence
  */
- 
-class Reign_Bambora_Block_Info_Paymentapi extends Mage_Payment_Block_Info
-{
-    protected function _construct()
-    {
-        parent::_construct();
-        $this->setTemplate('reignbambora/info/info.phtml');
-    }
-    
-    public function getCcTypeName($type)
-    {
-        return Mage::helper('bambora')->getCcTypeName($type);
-    }
-    
-}
+?>

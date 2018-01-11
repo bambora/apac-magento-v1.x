@@ -1,0 +1,16 @@
+<?php if (Mage::registry('errormessage') != "") { ?>
+    <script>
+        window.onload = function() 
+        {
+            alert("<?php echo Mage::registry('errormessage')?>");  
+            parent.removeOverlay();
+        }
+    </script>
+<?php } else { ?>
+    <script>
+        window.onload = function()
+        {
+            window.top.location.href = "<?php echo Mage::getBaseUrl() ?>checkout/onepage/success/";
+        }
+    </script>
+<?php } ?>

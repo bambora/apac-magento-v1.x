@@ -1,7 +1,7 @@
 <?php 
 /**
  * @author    Reign <hello@reign.com.au>
- * @version   1.0
+ * @version   1.2.0
  * @copyright Copyright (c) 2017 Reign. All rights reserved.
  * @copyright Copyright (c) 2017 Bambora. All rights reserved.
  * @license   Proprietary/Closed Source

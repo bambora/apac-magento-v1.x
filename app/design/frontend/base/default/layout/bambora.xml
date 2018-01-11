@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <checkout_onepage_index>
+        <reference name="content">            
+            <block type="core/template" template="reignbambora/js.phtml"/>
+        </reference>    
+    </checkout_onepage_index>
+    <onestepcheckout_index_index>
+        <reference name="content">            
+            <block type="core/template" template="reignbambora/js.phtml"/>
+        </reference>    
+    </onestepcheckout_index_index>
+    <firecheckout_index_index>
+        <reference name="content">            
+            <block type="core/template" template="reignbambora/js.phtml"/>
+        </reference>    
+    </firecheckout_index_index>
+    <bambora_index_integratedcheckout>
+        <reference name="root">
+            <action method="setTemplate"><template>reignbambora/integrated.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="page/html_wrapper" name="bambora"  />
+        </reference>
+    </bambora_index_integratedcheckout>
+    <bambora_index_userurl>
+        <reference name="root">
+            <action method="setTemplate"><template>reignbambora/userurl.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="page/html_wrapper" name="bambora"  />
+        </reference>
+    </bambora_index_userurl>
+</layout>

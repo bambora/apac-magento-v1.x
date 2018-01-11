@@ -11,17 +11,18 @@
  * http://www.reign.com.au/magento-licence
  */
  
-class Reign_Bambora_Block_Info_Paymentapi extends Mage_Payment_Block_Info
+class Reign_Bambora_Block_Form_Integrated extends  Mage_Payment_Block_Form
 {
     protected function _construct()
     {
         parent::_construct();
-        $this->setTemplate('reignbambora/info/info.phtml');
+        $this->setTemplate('reignbambora/form/integrated.phtml');
+         
     }
-    
-    public function getCcTypeName($type)
+
+    protected function _getConfig()
     {
-        return Mage::helper('bambora')->getCcTypeName($type);
+        return Mage::getSingleton('bambora/config');
     }
-    
+
 }

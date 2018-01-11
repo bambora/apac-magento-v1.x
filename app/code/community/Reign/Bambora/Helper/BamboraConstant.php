@@ -1,7 +1,7 @@
 <?php
 /**
  * @author    Reign <hello@reign.com.au>
- * @version   1.0
+ * @version   1.2.0
  * @copyright Copyright (c) 2017 Reign. All rights reserved.
  * @copyright Copyright (c) 2017 Bambora. All rights reserved.
  * @license   Proprietary/Closed Source
@@ -40,5 +40,17 @@ class Reign_Bambora_Helper_BamboraConstant
     // Error messages
     const TRANSACTION_SANDBOX_ERROR_MESSAGE = 'Payment failed';
     const TRANSACTION_LIVE_ERROR_MESSAGE = 'Unable to complete payment. Please try again or contact us for further assistance.';    
+    
+    // Integrated Checkout
+    const CHECKOUT_V1_PURCHASE = 'checkout_v1_purchase';
+    const CHECKOUT_V1_PREAUTH = 'checkout_v1_preauth';    
+    // const CHECKOUT_V1_PREAUTH = 'checkout_v1_purchase';        
+
+    // const SANDBOX_INTEGRATED_CHECKOUT_URL = 'https://demo.ippayments.com.au/access/index.aspx';
+    const SANDBOX_INTEGRATED_CHECKOUT_URL = 'https://demo.bambora.co.nz/access/index.aspx';
+    const LIVE_INTEGRATED_CHECKOUT_URL = 'https://www.ippayments.com.au/access/index.aspx';
+    
+    const BAMBORA_ORDER_TRANSACTION_AUTHORIZATION = "authorization";
+    const BAMBORA_ORDER_TRANSACTION_CAPTURE = "capture";
     
 }

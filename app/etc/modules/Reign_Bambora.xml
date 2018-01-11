@@ -4,9 +4,9 @@
         <Reign_Bambora>
             <active>true</active>
             <codePool>community</codePool>
+            <depends>
+                <Mage_Payment />
+            </depends>
         </Reign_Bambora>
-        <depends>
-            <Mage_Payment />
-        </depends>
     </modules>
 </config> 

@@ -1,7 +1,7 @@
 <?php
 /**
  * @author    Reign <hello@reign.com.au>
- * @version   1.0
+ * @version   1.2.0
  * @copyright Copyright (c) 2017 Reign. All rights reserved.
  * @copyright Copyright (c) 2017 Bambora. All rights reserved.
  * @license   Proprietary/Closed Source
@@ -12,8 +12,10 @@
  */
 
  
-class Reign_Bambora_Model_Config_Source_Orderstatus extends Mage_Adminhtml_Model_System_Config_Source_Order_Status_Newprocessing
+class Reign_Bambora_Model_Config_Source_Orderstatus extends 
+    Mage_Adminhtml_Model_System_Config_Source_Order_Status_Newprocessing
 {
+    
     /**
      * Return new order statuses and strip out 'Processed Ogone Payment'
      * which is not applicable
@@ -28,6 +30,8 @@ class Reign_Bambora_Model_Config_Source_Orderstatus extends Mage_Adminhtml_Model
                 unset($options[$key]);
             }
         }
+        
         return $options;
     }
+    
 }

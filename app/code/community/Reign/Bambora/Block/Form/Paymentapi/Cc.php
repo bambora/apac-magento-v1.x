@@ -1,7 +1,7 @@
 <?php
 /**
  * @author    Reign <hello@reign.com.au>
- * @version   1.0
+ * @version   1.2.0
  * @copyright Copyright (c) 2017 Reign. All rights reserved.
  * @copyright Copyright (c) 2017 Bambora. All rights reserved.
  * @license   Proprietary/Closed Source
@@ -34,7 +34,6 @@ class Reign_Bambora_Block_Form_Paymentapi_Cc extends  Mage_Payment_Block_Form
     {
         $types = $this->_getConfig()->getCcTypes();
         if ($method = $this->getMethod()) {
-            //$availableTypes = $method->getConfigData('cctypes');
             $availableTypes =  Mage::getStoreConfig('payment/bambora/cctypes');
             
             if ($availableTypes) {
@@ -46,6 +45,7 @@ class Reign_Bambora_Block_Form_Paymentapi_Cc extends  Mage_Payment_Block_Form
                 }
             }
         }
+
         return $types;
     }
 
@@ -57,11 +57,12 @@ class Reign_Bambora_Block_Form_Paymentapi_Cc extends  Mage_Payment_Block_Form
     public function getCcMonths()
     {
         $months = $this->getData('cc_months');
-        if (is_null($months)) {
+        if ($months === null) {
             $months[0] =  $this->__('Month');
             $months = array_merge($months, $this->_getConfig()->getMonths());
             $this->setData('cc_months', $months);
         }
+
         return $months;
     }
 
@@ -73,11 +74,12 @@ class Reign_Bambora_Block_Form_Paymentapi_Cc extends  Mage_Payment_Block_Form
     public function getCcYears()
     {
         $years = $this->getData('cc_years');
-        if (is_null($years)) {
+        if ($years === null) {
             $years = $this->_getConfig()->getYears();
             $years = array(0=>$this->__('Year'))+$years;
             $this->setData('cc_years', $years);
         }
+
         return $years;
     }
 
@@ -90,11 +92,14 @@ class Reign_Bambora_Block_Form_Paymentapi_Cc extends  Mage_Payment_Block_Form
     {
         if ($this->getMethod()) {
             $configData = Mage::getStoreConfig('payment/bambora/useccv');
-            if(is_null($configData)){
+
+            if (is_null($configData)) {
                 return true;
             }
+
             return (bool) $configData;
         }
+
         return true;
     }
 

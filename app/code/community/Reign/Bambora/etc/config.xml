@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Reign_Bambora>
-            <version>1.0.0</version>
+            <version>1.2.0</version>
         </Reign_Bambora>
     </modules>
     <frontend>
@@ -15,6 +15,13 @@
                 </args>
             </bambora>
         </routers>
+        <layout>
+            <updates>
+                <bambora>
+                    <file>bambora.xml</file>
+                </bambora>
+            </updates>
+        </layout>        
     </frontend>
     <global>
         <models>
@@ -73,6 +80,7 @@
             <bambora>
                 <active>0</active>
                 <model>bambora/method_payment</model>
+                <mode>sandbox</mode>
                 <order_status>processing</order_status>
                 <title>Credit Card (Bambora)</title>
                 <cctypes>VI,MC</cctypes>
@@ -81,6 +89,15 @@
                 <allowspecific>0</allowspecific>
                 <enable_ssl>1</enable_ssl>
             </bambora>
+            <bambora_integrated>
+                <active>0</active>                
+                <model>bambora/method_integrated</model>
+                <mode>sandbox</mode>                
+                <order_status>processing</order_status>                
+                <title>Bambora Checkout</title>
+                <payment_action>1</payment_action>    
+                <allowspecific>0</allowspecific>                
+            </bambora_integrated>
         </payment>
     </default>
 </config>

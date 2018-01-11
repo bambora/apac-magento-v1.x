@@ -1,0 +1,14 @@
+<html>
+    <body style="background-image: url(<?php echo Mage::getBaseUrl() ?>/skin/frontend/base/default/images/spinner.gif); background-repeat: no-repeat; background-position: 50% 50%; width: 400px; min-width: 320px; height: 704px; margin: 35px auto 0px; display: table-row; background-size: 25%; text-align: center; box-shadow: rgb(0, 0, 0) 0px 0px 70px 0px;">
+        <form id="integratedcheckoufrm" action="<?php echo Mage::registry('submiturl')?>" >
+            <input type="hidden" name="SST" value="" />;
+            <input type="hidden" name="SessionId" value="<?php echo Mage::registry('quoteid')?>" />
+        </form>
+        <script>
+            window.onload = function() {
+                document.getElementsByName("SST")[1].value = document.getElementsByName("SST")[0].value;
+                document.getElementById("integratedcheckoufrm").submit();
+            }
+        </script>
+    </body>
+</html>
