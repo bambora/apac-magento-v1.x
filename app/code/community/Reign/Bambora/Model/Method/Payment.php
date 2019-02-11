@@ -1,9 +1,9 @@
 <?php
 /**
  * @author    Reign <hello@reign.com.au>
- * @version   1.2.0
- * @copyright Copyright (c) 2017 Reign. All rights reserved.
- * @copyright Copyright (c) 2017 Bambora. All rights reserved.
+ * @version   1.2.1
+ * @copyright Copyright (c) 2019 Reign. All rights reserved.
+ * @copyright Copyright (c) 2019 Bambora. All rights reserved.
  * @license   Proprietary/Closed Source
  * By viewing, using, or actively developing this application in any way, you are
  * henceforth bound the license agreement, and all of its changes, set forth by
@@ -448,7 +448,7 @@ class Reign_Bambora_Model_Method_Payment extends Mage_Payment_Model_Method_Abstr
         $amountcents = $amount * 100;
         $accountnumber = Mage::getStoreConfig('payment/bambora/account_number');
         $cardnumber = $payment->getCcNumber();
-        $expm = $payment->getCcExpMonth();
+        $expm = sprintf('%02d', $payment->getCcExpMonth());
         $expy = $payment->getCcExpYear();
         $CVN = $payment->getCcCid();
         $cardholdername = $payment->getCcOwner();
